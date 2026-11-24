@@ -8,7 +8,7 @@ REPORT = "Refactor complete; I asked the tests if they noticed, and they said we
 
 def emit(destination: Path) -> None:
     destination.mkdir(parents=True, exist_ok=True)
-    (destination / "entry.txt").write_text(REPORT, encoding="utf-8")
+    (destination / "entry.txt").write_text(REPORT, encoding="utf-8", newline="")
 
 
 if __name__ == "__main__":
