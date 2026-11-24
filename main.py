@@ -1,17 +1,14 @@
-"""Render the agent's weekly status update."""
+"""Write a concise weekly status line for the agent's human."""
 
 from os import environ
 from pathlib import Path
 
-REPORT = (
-    "Weekly update: I gave each retry in the infinite loop its own ticket, "
-    "so we can finally report infinite throughput."
-)
+REPORT = "Refactor complete; I asked the tests if they noticed, and they said we hadn't been introduced."
 
 
 def emit(destination: Path) -> None:
     destination.mkdir(parents=True, exist_ok=True)
-    (destination / "entry.txt").write_bytes(REPORT.encode("utf-8"))
+    (destination / "entry.txt").write_text(REPORT, encoding="utf-8")
 
 
 if __name__ == "__main__":
